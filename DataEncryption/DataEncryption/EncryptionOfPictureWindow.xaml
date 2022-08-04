@@ -1,0 +1,86 @@
+﻿<Window x:Class="DataEncryption.EncryptionOfPictureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataEncryption"
+        mc:Ignorable="d"
+        Title="Шифрування зображень"
+        Height="600"
+        Width="550"
+        MinHeight="600"
+        MinWidth="550"
+        Background="#1f2542"
+        Icon="/Pictures/EncryptionIcon.png"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.6*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Source="Pictures\SecurityIcon.png" Margin="20,5,20,5"/>
+
+        <Button Name="ToMainMenuButton"
+                Content="Головне меню"
+                 BorderBrush="#FFD7E6F7"  BorderThickness="3"  materialDesign:ButtonAssist.CornerRadius="10"
+                Foreground="White"
+                FontSize="12" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Margin="20,0,0,0" Click="ToMainMenuButton_Click" Cursor="Hand" Background="{x:Null}" Height="40">
+        </Button>
+        <Button Name="ToPictureDecryptionButton"
+                Grid.Column="2"
+                Content="Розшифрування"
+                BorderBrush="#FFD7E6F7"  BorderThickness="3"  materialDesign:ButtonAssist.CornerRadius="10"
+                Foreground="White"
+                FontSize="12"
+                Margin="0,0,20,0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Click="ToPictureDecryptionButton_Click" Background="{x:Null}" Height="40">
+        </Button>
+        <Border Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" Margin="20,10,20,20" CornerRadius="20" Background="#FF515D92" BorderThickness="5" BorderBrush="#FF86A9FF"/>
+        <Image Name="PictureImage"
+               Grid.ColumnSpan="2"
+               Grid.RowSpan="2" Grid.Row="1" Margin="70,90,70,105"/>
+        <Button Name="EncryptPictureButton"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                 materialDesign:ButtonAssist.CornerRadius="10" Background="#FF30385C" BorderBrush="White" BorderThickness="3"
+                Content="Зашифрувати"
+                Height="48"
+                Foreground="White"
+                FontSize="15" 
+                Click="EncryptPictureButton_Click" Margin="50,0,55,5"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="250,100,30,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+            <TextBlock Name="dTextBlock"
+                       Margin="0,15,0,0"
+                       Text="d = "
+                       FontSize="22"/>
+            <TextBlock Name="nTextBlock"
+                       Margin="0,15,0,0"
+                       Text="n = "
+                       FontSize="22"/>
+        </StackPanel>
+        <Button Name="OpenPictureButton"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Height="45"
+                Content="Відкрити зображення"
+                materialDesign:ButtonAssist.CornerRadius="10"  BorderBrush="White" BorderThickness="3"
+                Foreground="White"
+                FontSize="15" 
+                Grid.Row="1"
+                Click="OpenPictureButton_Click" 
+                VerticalAlignment="Top" 
+                Margin="90,30,85,0" Cursor="Hand" Background="{x:Null}"/>
+    </Grid>
+</Window>

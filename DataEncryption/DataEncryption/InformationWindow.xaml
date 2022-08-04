@@ -1,0 +1,89 @@
+﻿<Window x:Class="DataEncryption.InformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataEncryption"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Шифрування даних" 
+        Height="400" 
+        Width="600" 
+        Icon="/Pictures/EncryptionIcon.png"
+        KeyDown="WindowAndTextBoxesAndButton_KeyDown">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4A251F"/>
+                <GradientStop Color="#FFC1AD85" Offset="1"/>
+                <GradientStop Color="#FFB26548" Offset="0.5"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68"/>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="83"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="3" 
+                   Text="Історія виникнення ідеї для проекту" 
+                   Foreground="White" 
+                   FontFamily="Segoe UI"
+                   FontSize="27" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" />
+        <Grid Grid.Row="0" 
+              Grid.Column="0" 
+              Grid.RowSpan="3" 
+              Grid.ColumnSpan="3" 
+              Width="530" 
+              Height="200" 
+              Background="#FFB26548">
+            <TextBlock Text="Ідея створення цієї програми виникла під час вибору теми для курсової роботи. Автор подумав: 'Розробка гри і все що пов'язано з нею була не дуже вдалою ідеєю, тому він вирішив придумати тему, яка буде йому подобатися і тим більше буде хоч трохи корисна'. І таким чином виникла ідея створити програму, яка б шифрувала дані, хоча перед цією думкою автор гадав зробити щось на кшталт календаря з усіма святами. Але автору ця ідея не дуже сподобалася, тому він вибрав тему 'Шифрування даних'." 
+                       FontFamily="Segoe UI"
+                       FontSize="16" 
+                       Padding="16,10,16,0"
+                       Foreground="White" 
+                       TextWrapping="Wrap"/>
+        </Grid>
+        <Button x:Name="PreviousWindowButton" 
+                Padding="32,18,32,18"
+                Click="PreviousWindowButton_Click" 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Height="56" 
+                Width="107" 
+                HorizontalAlignment="Left" 
+                VerticalContentAlignment="Center" 
+                Background="#FFB26548" 
+                Content="Назад" 
+                FontFamily="Segoe UI"
+                FontSize="15" 
+                VerticalAlignment="Top" 
+                Foreground="White" 
+                BorderBrush="{x:Null}" Cursor="Hand"/>
+        <Button x:Name="InformationOfAuthorButton" 
+                Padding="32,18,32,18"
+                Click="InformationOfAuthorButton_Click" 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Height="56" 
+                Width="147" 
+                HorizontalAlignment="Right" 
+                Background="#FFB26548" 
+                Content="Про автора" 
+                FontFamily="Segoe UI"
+                FontSize="15" 
+                VerticalAlignment="Top" 
+                Foreground="#DDFFFFFF" 
+                BorderBrush="{x:Null}" 
+                Cursor="Hand"/>
+    </Grid>
+</Window>

@@ -1,0 +1,129 @@
+﻿<Window x:Class="DataEncryption.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataEncryption"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Шифрування даних" 
+        Height="480" 
+        Width="380" 
+        Background="#FF2A2E38" 
+        Icon="/Pictures/EncryptionIcon.png" 
+        KeyDown="WindowAndTextBoxesAndButton_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="126"/>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="86"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28"/>
+            <ColumnDefinition Width="57"/>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="RegistrationTextBlock" 
+                   Style="{StaticResource BigTextBlockStyle}"
+                   Padding="10"
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   Grid.ColumnSpan="3" 
+                   Text="Авторизація" 
+                   VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="1" 
+              Grid.Column="1" 
+              Grid.RowSpan="2" 
+              Grid.ColumnSpan="3" 
+              Background="White" >
+            <TextBox x:Name="LoginAuthTextBox" 
+                     materialDesign:HintAssist.Hint="Введіть логін" 
+                     Padding="16,0,0,0"
+                     Margin="36,65,36,25"
+                     FontSize="15" 
+                     Height="30"
+                     VerticalContentAlignment="Center" 
+                     Background="#FF2A2E38" 
+                     MaxLines="1" 
+                     Foreground="White" 
+                     Cursor="Arrow" 
+                     HorizontalAlignment="Stretch" KeyDown="WindowAndTextBoxesAndButton_KeyDown"/>
+            <PasswordBox x:Name="PasswordAuthTextBox"
+                         materialDesign:HintAssist.Hint="Введіть пароль" 
+                         Padding="16,0,0,0"
+                         FontSize="15" 
+                         Height="30"
+                         VerticalContentAlignment="Center" 
+                         Cursor="Arrow" 
+                         Background="#FF2A2E38" 
+                         Foreground="White" 
+                         Margin="36,0,36,25" 
+                         VerticalAlignment="Center" 
+                         HorizontalAlignment="Stretch" KeyDown="WindowAndTextBoxesAndButton_KeyDown"/>
+            <Button x:Name="AuthorizationButton" 
+                    Content="Авторизуватися" 
+                    Padding="32,18,32,18"
+                    FontFamily="Segoe UI"
+                    FontSize="15" 
+                    Width="183" 
+                    Height="55" 
+                    VerticalAlignment="Bottom"  
+                    HorizontalAlignment="Center" 
+                    Background="#FFF9B057" 
+                    Foreground="#DD000000" 
+                    Cursor="Hand" 
+                    Click="AuthorizationButton_Click"/>
+        </StackPanel>
+        <Ellipse Grid.Row="0" 
+                 Grid.Column="2" 
+                 Grid.RowSpan="2" 
+                 Height="90" 
+                 Width="90" 
+                 VerticalAlignment="Center" 
+                 Fill="#FFF9B057" />
+        <Image Source="Pictures\UserIcon.png" 
+               Grid.Row="0" 
+               Grid.Column="2" 
+               Grid.RowSpan="2" 
+               Width="65" 
+               Height="65"/>
+        <TextBlock Grid.Row="5" 
+                   Grid.Column="2" 
+                   Text="Нема акаунту?" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" 
+                   Foreground="#FFD4D4D4" 
+                   FontSize="15" 
+                   Margin="0,0,0,35" />
+        <Button Style="{StaticResource ButtonStyle}" 
+                x:Name="RegistrationButton"
+                Click="RegistrationButton_Click" 
+                Grid.Row="5" 
+                Grid.Column="2"
+                Content="Зареєструйте" 
+                Width="110" 
+                HorizontalAlignment="Right" 
+                Foreground="#FFEAA239" 
+                Cursor="Hand" 
+                Margin="0,0,0,35" 
+                VerticalAlignment="Center"/>
+        <Button x:Name="OpenMainWindowButton" 
+                Style="{StaticResource ButtonStyle}" 
+                Click="OpenMainWindowButton_Click" 
+                Grid.Row="4" 
+                Grid.Column="2" 
+                Content="На головну"  
+                VerticalAlignment="Bottom" 
+                Margin="0,0,0,25" 
+                Foreground="#FFEAA239" 
+                HorizontalAlignment="Center" 
+                Cursor="Hand"/>
+    </Grid>
+</Window>
